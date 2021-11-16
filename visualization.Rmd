@@ -1,0 +1,63 @@
+---
+title: "CS6140Project"
+author: "Haoran Qiu"
+date: "12/13/2020"
+output: html_document
+---
+
+```{r}
+#Shallow cnn
+modelFinal_first_spectrum_experimental <- read.csv("modelFinal_first_spectrum_experimental.csv")
+modelFinal_first_spectrum_predicted <-read.csv("modelFinal_first_spectrum_predicted.csv")
+modelFinal_first_spectrum_experimental$mz <- modelFinal_first_spectrum_experimental$mz/10
+modelFinal_first_spectrum_predicted$mz <- modelFinal_first_spectrum_predicted$mz/10
+modelFinal_first_spectrum_predicted$intensity <- -modelFinal_first_spectrum_predicted$intensity
+
+model4_first_spectrum_experimental <- read.csv("model4_first_spectrum_experimental.csv")
+model4_first_spectrum_predicted <-read.csv("model4_first_spectrum_predicted.csv")
+model4_first_spectrum_experimental$mz <- model4_first_spectrum_experimental$mz/10
+model4_first_spectrum_predicted$mz <- model4_first_spectrum_predicted$mz/10
+model4_first_spectrum_predicted$intensity <- -model4_first_spectrum_predicted$intensity
+
+modelFinal_third_spectrum_experimental <- read.csv("modelFinal_third_spectrum_experimental.csv")
+modelFinal_third_spectrum_predicted <-read.csv("modelFinal_third_spectrum_predicted.csv")
+modelFinal_third_spectrum_experimental$mz <- modelFinal_third_spectrum_experimental$mz/10
+modelFinal_third_spectrum_predicted$mz <- modelFinal_third_spectrum_predicted$mz/10
+modelFinal_third_spectrum_predicted$intensity <- -modelFinal_third_spectrum_predicted$intensity
+
+model4_third_spectrum_experimental <- read.csv("model4_third_spectrum_experimental.csv")
+model4_third_spectrum_predicted <-read.csv("model4_third_spectrum_predicted.csv")
+model4_third_spectrum_experimental$mz <- model4_third_spectrum_experimental$mz/10
+model4_third_spectrum_predicted$mz <- model4_third_spectrum_predicted$mz/10
+model4_third_spectrum_predicted$intensity <- -model4_third_spectrum_predicted$intensity
+```
+
+```{r}
+#Shallow CNN
+library(protViz)
+plot(modelFinal_first_spectrum_experimental, reporters = iTRAQ, type = "h", main = "AAASVTPPGSLELLQPGFSK, charge 2, Euclidean distance 0.8195519457999176", xlab = "M/z", ylab = "Intensity", col = "blue")
+plot(modelFinal_first_spectrum_predicted, reporters = iTRAQ, type = "h", main = "AAASVTPPGSLELLQPGFSK, charge 2, Euclidean distance 0.8195519457999176", xlab = "M/z", ylab = "Intensity", col = "green")
+
+plot(model4_first_spectrum_experimental, reporters = iTRAQ, type = "h", main = "AAASVTPPGSLELLQPGFSK, charge 2, Euclidean distance 0.964159227797888", xlab = "M/z", ylab = "Intensity", col = "blue")
+plot(model4_first_spectrum_predicted, reporters = iTRAQ, type = "h", main = "AAASVTPPGSLELLQPGFSK, charge 2, Euclidean distance 0.964159227797888", xlab = "M/z", ylab = "Intensity", col = "green")
+
+plot(modelFinal_third_spectrum_experimental, reporters = iTRAQ, type = "h", main = " AAEADGPLK, charge 2, Euclidean distance 0.7768489260479496", xlab = "M/z", ylab = "Intensity", col = "blue")
+plot(modelFinal_third_spectrum_predicted, reporters = iTRAQ, type = "h", main = " AAEADGPLK, charge 2, Euclidean distance 0.7768489260479496", xlab = "M/z", ylab = "Intensity", col = "green")
+
+plot(model4_third_spectrum_experimental, reporters = iTRAQ, type = "h", main = " AAEADGPLK, charge 2, Euclidean distance 0.9610985042210219", xlab = "M/z", ylab = "Intensity", col = "blue")
+plot(model4_third_spectrum_predicted, reporters = iTRAQ, type = "h", main = " AAEADGPLK, charge 2, Euclidean distance 0.9610985042210219", xlab = "M/z", ylab = "Intensity", col = "green")
+```
+
+```{r}
+#Normal CNN
+FromNormalCNN_second <- read.csv("FromNormalCNN_second.csv")
+FromNormalCNN_second$X <- FromNormalCNN_second$X/10
+FromNormalCNN_second$y_pred <- -FromNormalCNN_second$y_pred
+```
+
+```{r}
+#Normal CNN
+library(protViz)
+plot(FromNormalCNN_second[c(1,2)], reporters = iTRAQ, type = "h", main = "AAASVTPPGSLELLQPGFSK, charge 2, similarity 0.079", xlab = "M/z", ylab = "Intensity", col = "blue")
+plot(FromNormalCNN_second[c(1,3)], reporters = iTRAQ, type = "h", main = "AAASVTPPGSLELLQPGFSK, charge 2, similarity 0.079", xlab = "M/z", ylab = "Intensity", col = "green")
+```
