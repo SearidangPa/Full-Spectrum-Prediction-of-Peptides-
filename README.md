@@ -13,7 +13,7 @@
 **PeptideNet.ipynb**
 > This Jupyter Notebook file consists of code to create and run the architecture of PeptideNet cnn based on predfull network. Data is generated into Data Generator explicitly coded to handle the data of this kind which is generated using the Fast_Data_Preprocessing.py and consist of some visualization of network’s training phase along with prediction of spectrum with best sets of weights.
 
-* To run the script that test the perform evaluation on the test set: run **Python3 Testset_eval.py** 
+To run the script that test the perform evaluation on the test set: run **Python3 Testset_eval.py** 
 
 **Predictions Visualization**
 > Two spectra predictions from each Shallow CNN and one spectra prediction from Normal CNN are visualized compared with the experimental spectra using visualization.Rmd. Blue spectra are experimental spectra, and green spectra are predicted spectra. The data for visualization is saved by saving the corresponding predicted intensity and experimental intensity of three random-chosen sequences. 
