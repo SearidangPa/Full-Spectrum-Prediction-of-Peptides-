@@ -1,23 +1,15 @@
 
 * Dataset
-Because of the large size of the datasets, we cannot submit our code with the dataset. 
-
-The 4 training dataset ProteomeTools.mgf, NIST_Synthetic.mgf, NIST.mgf, and MassIVE.mgf can be downloaded at https://scholarworks.iu.edu/dspace/handle/2022/24023. 
-
-The test set can be downloaded at https://scholarworks.iu.edu/dspace/handle/2022/25283. 
+Because of the large size of the datasets, we cannot submit our code with the dataset. The 4 training dataset ProteomeTools.mgf, NIST_Synthetic.mgf, NIST.mgf, and MassIVE.mgf can be downloaded at https://scholarworks.iu.edu/dspace/handle/2022/24023. The test set can be downloaded at https://scholarworks.iu.edu/dspace/handle/2022/25283. 
 
 * Data Processing
 
-Put in a folder named ‘Data’. Then, run python3 Fast_data_processing.py 
-
-It will generate many files, each in a folder named after its dataset. For example, bin_vs_intensity0.npz (which is the target of our model) and one_hot_encoding0.npy (which is our inputs) contains the first 100 clean data points. Furthermore, bin_vs_intensity1.npz  and one_hot_encoding1.npy contains the next 100 clean data points, so on and so forth. 
+Put in a folder named ‘Data’. Then, run python3 Fast_data_processing.py. It will generate many files, each in a folder named after its dataset. For example, bin_vs_intensity0.npz (which is the target of our model) and one_hot_encoding0.npy (which is our inputs) contains the first 100 clean data points. Furthermore, bin_vs_intensity1.npz  and one_hot_encoding1.npy contains the next 100 clean data points, so on and so forth. 
 
 
 * Shallow Network
 
-Model4_ED is trained using euclidean distance loss (MSE). Model4_Cosine.pt is the weight of the network with the same architecture as model4_ED, but trained using cosine similarity measure. 
-
-Because the weight model4_ED.pt and model4_Cosine.pt are large (several Gbs) and because I (Dang) have limited internet, I will refer you to my other teammates’ code for the weights of the model. 
+Model4_ED is trained using euclidean distance loss (MSE). Model4_Cosine.pt is the weight of the network with the same architecture as model4_ED, but trained using cosine similarity measure. Because the weight model4_ED.pt and model4_Cosine.pt are large (several Gbs) and because I (Dang) have limited internet, I will refer you to my other teammates’ code for the weights of the model. 
 
 
 * PeptideNet.ipynb
