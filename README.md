@@ -1,6 +1,6 @@
 
-**Dataset** \\
-Because of the large size of the datasets, we cannot submit our code with the dataset. The 4 training dataset ProteomeTools.mgf, NIST_Synthetic.mgf, NIST.mgf, and MassIVE.mgf can be downloaded at https://scholarworks.iu.edu/dspace/handle/2022/24023. The test set can be downloaded at https://scholarworks.iu.edu/dspace/handle/2022/25283. 
+**Dataset** 
+> Because of the large size of the datasets, we cannot submit our code with the dataset. The 4 training dataset ProteomeTools.mgf, NIST_Synthetic.mgf, NIST.mgf, and MassIVE.mgf can be downloaded at https://scholarworks.iu.edu/dspace/handle/2022/24023. The test set can be downloaded at https://scholarworks.iu.edu/dspace/handle/2022/25283. 
 
 **Data Processing**
 Put in a folder named ‘Data’. Then, run python3 Fast_data_processing.py. It will generate many files, each in a folder named after its dataset. For example, bin_vs_intensity0.npz (which is the target of our model) and one_hot_encoding0.npy (which is our inputs) contains the first 100 clean data points. Furthermore, bin_vs_intensity1.npz  and one_hot_encoding1.npy contains the next 100 clean data points, so on and so forth. 
